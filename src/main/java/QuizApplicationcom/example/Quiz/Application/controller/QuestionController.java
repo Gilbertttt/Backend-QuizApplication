@@ -3,10 +3,7 @@ package QuizApplicationcom.example.Quiz.Application.controller;
 import QuizApplicationcom.example.Quiz.Application.Model.quiztable;
 import QuizApplicationcom.example.Quiz.Application.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,16 @@ public class QuestionController {
     @GetMapping("/category/{category}")
     public List<quiztable> getAllQuestionsByCategory(@PathVariable String category){
         return questionService.getAllQuestionsByCategory(category);
-    }
 
+        // A path variable is used to retrieve data from the URL
+        // @PathVariable is used to extract the value from the URL
+        // @PathVariable is used to collect incoming data from the URL
+        // In this work, @PathVariable is collecting data from the database (category)
+        // and storing it in a variable type string named (category)
+    }
+    @PostMapping("/add")
+    public String addquestions(@RequestBody quiztable quiztable){
+        return questionService.addquestions(quiztable);
+        // To retrieve data use @PathVariable, while sending @RequestBody
+    }
 }

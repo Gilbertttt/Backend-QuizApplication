@@ -14,4 +14,5 @@ import java.util.List;
 public interface QuestionDao extends JpaRepository<quiztable, Integer> {
 
     List<quiztable> findByCategory(String category);
+
 }

@@ -12,10 +12,13 @@ public class QuestionService {
     @Autowired
     QuestionDao questionDao;
     public List<quiztable> getAllQuestions() {
-
         return questionDao.findAll();
     }
     public List<quiztable> getAllQuestionsByCategory(String category){
        return questionDao.findByCategory(category);
+    }
+    public String addquestions(quiztable quiztable){
+        questionDao.save(quiztable);
+        return "Success";
     }
 }

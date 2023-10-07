@@ -8,11 +8,11 @@ import lombok.Data;
 @Table
 public class quiztable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String category;
     private String difficultylevel;
-    private String questionTitle;
+    private String questiontitle;
     private String a;
     private String b;
     private String c;
